@@ -1,21 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ChatWindow from './components/ChatWindow';
-import ChatAssistantLogo from './components/ChatAssistantLogo';
 import './App.css';
 
 const App = () => {
-  // Initialize showChat to true so the ChatWindow is visible by default
-  const [showChat, setShowChat] = useState(true); // This state controls the visibility of the ChatWindow
-
-  // This function toggles the visibility of the chat window
-  const toggleChat = () => {
-    setShowChat(!showChat);
-  };
-
+  // Since the logo and toggle functionality are removed, the ChatWindow can be displayed directly
   return (
     <div className="app-container">
-      <ChatAssistantLogo onToggleChat={toggleChat} /> {/* Logo is always visible */}
-      {showChat && <ChatWindow onClose={toggleChat} />} {/* ChatWindow visibility is now true by default */}
+      {/* ChatWindow will now always be visible without a toggle option */}
+      <ChatWindow />
     </div>
   );
 };
